@@ -1,0 +1,36 @@
+<h1>Restaurants</h1>
+<%= link_to "Home", home_path%>
+<%= link_to "Nuevo Restaurant", new_restaurant_path %>
+
+<table border="1">
+<thead>
+<tr>
+    <th>Nombre</th>
+    <th>Direccion</th>
+    <th>Rating</th>
+    <th>Nombre_Chef</th>
+</tr> 
+</thead>
+<% @restaurants.each do |r|%>
+<tr>
+    <td><%= r.nombre %></td>
+    <td><%= r.direccion %></td>
+    <td><%= r.rating %></td>
+    <td><%= r.nombre_chef %></td>
+<td>
+<%= link_to "Mostrar", r %>
+<%= link_to "Editar", edit_restaurant_path(r) %>
+<%= link_to "Eliminar",r, method: :delete, data: {confirm: "Esta seguro de borrar?"}  %>
+
+
+
+
+</td>
+</tr>
+<% end %>
+
+
+
+</table>
+
+

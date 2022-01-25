@@ -1,0 +1,30 @@
+<h1>EDITAR RESTAURANT</h1>
+
+<%= form_for (@restaurant) do |r|%>
+
+<div>
+<%= r.label :nombre%>
+<%= r.text_field :nombre%>
+</div>
+
+<div>
+<%= r.label :Direccion%>
+<%= r.text_field :direccion%>
+</div>
+
+<div>
+<%= r.label :Rating%>
+<%= r.text_field :rating%>
+</div>
+<div>
+<%= r.label :nombre_Chef%>
+<%= r.text_field :nombre_chef%>
+</div>
+
+<div>
+<%= r.submit %>
+</div>
+
+
+<% end %>
+
