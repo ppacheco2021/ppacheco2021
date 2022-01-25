@@ -1,8 +1,8 @@
 class RestaurantsController < ApplicationController
   
+  before_action :authenticate_user!
   def home
-    @name = 'Pedro'
-
+   
  #render "mi_vista"
     
   end
