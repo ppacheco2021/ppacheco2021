@@ -1,5 +1,32 @@
-<h1>Detalles Restaurants</h1>
-<div>Nombre: <%=@restaurant.nombre%>
-<div>Direccion: <%=@restaurant.direccion%>
+
+ <div>Nombre: <%=@restaurant.nombre%>
+<!-- <div>Direccion: <%=@restaurant.direccion%>
 <div>Rating: <%=@restaurant.rating%>
-<div>Nombre_Chef: <%=@restaurant.nombre_chef%>
+<div>Nombre_Chef: <%=@restaurant.nombre_chef%> -->
+
+
+
+     <h2>Comentarios</h2>
+     <% @restaurant.reviews.each do |c| %>
+     <p>
+        <strong> Comentario : </strong>
+        <%= c.content %>
+    </p>
+    <% end %>
+
+    <h2>Escriba un Comentario del Restaurant  <%=@restaurant.nombre%></h2>
+
+<%= form_with(model: [ @restaurant, Review.new ]) do |f| %>
+
+    <p>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+    </p>    
+    <%= f.submit %><br>
+     </p> 
+     <% end %>
+
+
+
+
+
